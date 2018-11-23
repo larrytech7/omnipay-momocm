@@ -12,47 +12,83 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     const VERSION = '6.9';
 
-    public function getInvoiceNo()
-    {
-        return $this->getParameter('invoiceNo');
+    public function getMerchantEmail(){
+        return $this->getParameter('_email');
     }
 
-    public function setInvoiceNo($invoiceNo)
-    {
-        return $this->setParameter('invoiceNo', $invoiceNo);
+    public function setMerchantEmail($email){
+        return $this->setParameter('_email', $email);
     }
 
-    public function getMerchantId()
+    public function getIdbouton()
     {
-        return $this->getParameter('merchantId');
+        return $this->getParameter('idbouton');
     }
 
-    public function setMerchantId($merchantId)
+    public function setIdbouton($btnID)
     {
-        return $this->setParameter('merchantId', $merchantId);
+        return $this->setParameter('idbouton', $btnID);
     }
 
-    public function getSecretKey()
-    {
-        return $this->getParameter('secretKey');
+    public function getTypebouton(){
+        return $this->getParameter('typebouton');
     }
 
-    public function setSecretKey($secretKey)
-    {
-        return $this->setParameter('secretKey', $secretKey);
+    public function setTypebouton($type){
+        return $this->setParameter('typebouton', $type);
+    }
+
+    public function getCIP(){
+        return $this->getParameter('_cIP');
+    }
+
+    public function getTel(){
+        return $this->getParameter('_tel');
+    }
+
+    public function setTel($tel){
+        return $this->setParameter('_tel', $tel);
+    }
+
+    public function setcIP($cip){
+        return $this->setParameter('_cIP', $cip);
+    }
+
+    public function getAmount(){
+        return $this->getParameter('_amount');
+    }
+
+    public function setAmount($amt){
+        return $this->setParameter('_amount', $amt);
+    }
+
+    public function setX($x){
+        return $this->setParameter('submit.x', $x);
+    }
+
+    public function getX(){
+        return $this->getParameter('submit.x');
+    }
+
+    public function setY($y){
+        return $this->setParameter('submit.y', $y);
+    }
+
+    public function getY(){
+        return $this->getParameter('submit.y');
     }
 
     public function getData()
     {
         $this->validate(
-            'merchantId',
-            'secretKey',
-            'invoiceNo',
-            'card',
-            'amount',
-            'currency',
-            'description',
-            'transactionId',
+            'idbouton',
+            'typebouton',
+            '_cIP',
+            '_tel',
+            '_amount',
+            '_email',
+            'submit.x',
+            'submit.y',
             'returnUrl',
             'notifyUrl'
         );

@@ -3,7 +3,7 @@ namespace Omnipay\CreditCardPaymentProcessor;
 
 use Omnipay\Tests\GatewayTestCase;
 
-class RedirectGatewayTest extends GatewayTestCase
+final class RedirectGatewayTest extends GatewayTestCase
 {
     /** @var RedirectGateway */
     protected $gateway;
@@ -15,25 +15,21 @@ class RedirectGatewayTest extends GatewayTestCase
     {
         parent::setUp();
 
-        $this->gateway = new RedirectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $this->gateway = new MomoMakePaymentRequestGateway($this->getHttpClient(), $this->getHttpRequest());
 
-        $this->gateway->setMerchantId('merchant_123');
-
-        $this->gateway->setSecretKey('secret_test');
+        $this->gateway->setMerchantEmail('larryakah@gmail.com');
 
         $this->options = [
-            'card' => [
-                'firstName' => 'Xu',
-                'lastName' => 'Ding',
-                'email' => 'xuding@spacebib.com',
-                'number' => '93804194'
-            ],
-            'amount' => 1999.00,
-            'currency' => 'THB',
+            '_amount' => 2000.00,
+            '_tel' => '678656032',
+            '_cIP' => '',
+            'submit.x' => 104,
+            'submit.y' => 70,
+            'currency' => 'XAF',
             'description' => 'Marina Run 2016',
             'transactionId' => 12,
-            'returnUrl' => 'https://www.example.com/return',
-            'notifyUrl' => 'https://www.example.com/notify',
+            'returnUrl' => 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml',
+            'notifyUrl' => 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml',
             'invoiceNo' => '20191212-123123'
         ];
 
@@ -45,17 +41,20 @@ class RedirectGatewayTest extends GatewayTestCase
         $response = $this->gateway->purchase($this->options)->send();
         $this->assertFalse($response->isSuccessful());
         $this->assertTrue($response->isRedirect());
-        $this->assertEquals('https://t.2c2p.com/RedirectV3/Payment', $response->getRedirectUrl());
+        $this->assertEquals('https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml', $response->getRedirectUrl());
 
         $this->gateway->setTestMode(true);
         $response = $this->gateway->purchase($this->options)->send();
-        $this->assertEquals('https://demo2.2c2p.com/2C2PFrontEnd/RedirectV3/payment', $response->getRedirectUrl());
+        $this->assertEquals('https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml', $response->getRedirectUrl());
     }
 
+    /*
     public function testCompletePurchase()
     {
         $this->getHttpRequest()->request->replace([
             'version' => '6.9',
+            'idbouton' => '12',
+            'typebouton' => 'PAIE',
             'request_timestamp' => '2015-09-17 10:30:12',
             'merchant_id' => 'merchant_test',
             'order_id' => '00000000000000123456',
@@ -84,4 +83,5 @@ class RedirectGatewayTest extends GatewayTestCase
         $this->assertTrue($response->isSuccessful());
         $this->assertSame('12345', $response->getTransactionReference());
     }
+    */
 }

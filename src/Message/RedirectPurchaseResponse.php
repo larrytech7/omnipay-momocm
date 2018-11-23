@@ -6,8 +6,8 @@ use Omnipay\Common\Message\AbstractResponse;
 
 class RedirectPurchaseResponse extends AbstractResponse
 {
-    private $endPointTest = 'https://demo2.2c2p.com/2C2PFrontEnd/RedirectV3/payment';
-    private $endPointProduction = 'https://t.2c2p.com/RedirectV3/Payment';
+    private $endPointTest = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
+    private $endPointProduction = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
 
     public function isSuccessful()
     {
