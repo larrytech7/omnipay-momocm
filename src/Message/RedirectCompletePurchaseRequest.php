@@ -61,7 +61,7 @@ class RedirectCompletePurchaseRequest extends AbstractRequest
             $this->emptyIfNotFound($data, 'ippInterestRate') .
             $this->emptyIfNotFound($data, 'ippMerchantAbsorbRate');
 
-        return strtoupper(hash_hmac('sha1', $strToHash, $this->getSecretKey(), false));
+        return strtoupper(hash_hmac('sha1', $strToHash, $this->getCIP(), false));
 
     }
 }
