@@ -33,12 +33,12 @@ $gateway->setEmail(''); //enter your merchant email obtained from the MTN develo
 
 $response = $gateway->purchase(array(
     '_amount' => 100, //the amount to charge
-    '_tel' => '+237677400000' //your customer's phone number
+    '_tel' => '677400000' //your customer's phone number
 ))->send();
 
 if($response->isSuccessful()){
     $mesage = json_decode($response->getMessage());
-    //save transsaction to database and notify the user
+    //save transaction to database and notify the user
     //.....
 }else{
     $message = json_decode($response->getMessage());
