@@ -23,7 +23,7 @@ class MomoMakePaymentRequestGateway extends AbstractGateway
 
     public function getName()
     {
-        return 'MomoRequestPayment';
+        return 'MtnMomo';
     }
 
     public function getDefaultParameters()

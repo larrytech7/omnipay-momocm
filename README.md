@@ -28,7 +28,7 @@ The following methods are provided by this package:
 ```
 use Omnipay\Omnipay;
 
-$gateway = Omnipay::create('MomoRequestPayment');
+$gateway = Omnipay::create('MtnMomo');
 $gateway->setEmail(''); //enter your merchant email obtained from the MTN developer portal
 
 $response = $gateway->purchase(array(
