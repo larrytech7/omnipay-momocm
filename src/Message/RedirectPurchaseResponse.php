@@ -1,5 +1,5 @@
 <?php
-namespace Omnipay\CreditCardPaymentProcessor\Message;
+namespace Omnipay\Momoc\Message;
 
 
 use Omnipay\Common\Message\AbstractResponse;
@@ -11,32 +11,28 @@ class RedirectPurchaseResponse extends AbstractResponse
 
     public function isSuccessful()
     {
-        return false;
+        return false;//$this->isSuccessful(); //default was false
     }
 
     public function isRedirect()
     {
-        return true;
-    }
-
-    public function isTransparentRedirect()
-    {
-        return true;
+        return true;//$this->isRedirect(); //DEFAULT was : true
     }
 
     public function getTransactionId()
     {
-        return $this->getData()['order_id'];
+        $transaction_response = json_decode($this->getMessage());
+        return $transaction_response['TransactionID']; //$this->getData()['order_id'];
     }
 
     public function getRedirectUrl()
     {
-        return $this->request->getTestMode() ? $this->endPointTest : $this->endPointProduction;
+        return $this->getRedirectUrl();
     }
 
     public function getRedirectMethod()
     {
-        return 'POST';
+        return 'GET';
     }
 
     public function getRedirectData()

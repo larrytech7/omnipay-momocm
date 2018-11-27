@@ -1,5 +1,5 @@
 <?php
-namespace Omnipay\CreditCardPaymentProcessor\Message;
+namespace Omnipay\Momoc\Message;
 
 
 use Omnipay\Tests\TestCase;
@@ -20,7 +20,6 @@ class RedirectPurchaseResponseTest extends TestCase
         ];
 
         $request = $this->getMockRequest();
-        $request->shouldReceive('getTestMode')->once()->andReturn(false);
         $response = new RedirectPurchaseResponse($request, $data);
 
         $this->assertFalse($response->isSuccessful());

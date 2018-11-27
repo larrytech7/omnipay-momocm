@@ -1,5 +1,5 @@
 <?php
-namespace Omnipay\CreditCardPaymentProcessor\Message;
+namespace Omnipay\Momoc\Message;
 
 
 class RedirectPurchaseRequest extends AbstractRequest
@@ -15,12 +15,11 @@ class RedirectPurchaseRequest extends AbstractRequest
             '_tel' => $this->getTel(),
             '_amount' => $this->amount(),
             '_cIP' => $this->getCIP(),
-            '_email' => $this->getMerchantEmail(),
+            '_email' => $this->getEmail(),
             'submit.x' => $this->getX(),
             'submit.y' => $this->getY(),
             'result_url_1' => $this->getReturnUrl(),
-            'result_url_2' => $this->getNotifyUrl(),
-            //'customer_email' => $this->getCard()->getEmail()
+            'result_url_2' => $this->getNotifyUrl()
         ];
 
         $data['hash_value'] = $this->hashValue($data);
@@ -36,7 +35,6 @@ class RedirectPurchaseRequest extends AbstractRequest
             $this->emptyIfNotFound($data, 'payment_description') .
             $this->emptyIfNotFound($data, 'typebouton') .
             $this->emptyIfNotFound($data, '_cIP') .
-            $this->emptyIfNotFound($data, 'currency') .
             $this->emptyIfNotFound($data, '_amount') .
             $this->emptyIfNotFound($data, '_email') .
             $this->emptyIfNotFound($data, 'submit.x') .

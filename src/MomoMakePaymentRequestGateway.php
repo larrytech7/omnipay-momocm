@@ -1,5 +1,5 @@
 <?php
-namespace Omnipay\CreditCardPaymentProcessor;
+namespace Omnipay\Momoc;
 
 use Omnipay\Common\AbstractGateway;
 
@@ -16,39 +16,31 @@ use Omnipay\Common\AbstractGateway;
  * @method \Omnipay\Common\Message\RequestInterface createCard(array $options = array())
  * @method \Omnipay\Common\Message\RequestInterface updateCard(array $options = array())
  * @method \Omnipay\Common\Message\RequestInterface deleteCard(array $options = array())
+ * @method \Omnipay\Common\Message\RequestInterface completePurchase(array $options = array())
  */
 class MomoMakePaymentRequestGateway extends AbstractGateway
 {
 
     public function getName()
     {
-        return 'MomoRequestPayment Redirect';
+        return 'MomoRequestPayment';
     }
 
     public function getDefaultParameters()
     {
         return [
-            'idbouton' => 2, //
-            'typebouton' => 'PAIE', //
+            'idbouton' => 2, //request config parameter
+            'typebouton' => 'PAIE', // request config parameter
+            '_email' => 'larryakah@gmail.com', //merchant email
         ];
     }
 
-    public function getMerchantEmail(){
-        return $this->getParameter('_email');
-    }
-
-    public function setMerchantEmail($email){
-        return $this->setParameter('_email', $email);
-    }
-
-    public function getIdbouton()
-    {
+    public function getIdbouton(){
         return $this->getParameter('idbouton');
     }
 
-    public function setIdbouton($btnID)
-    {
-        return $this->setParameter('idbouton', $btnID);
+    public function setIdbouton($id){
+        return $this->setParameter('idbouton', $id);
     }
 
     public function getTypebouton(){
@@ -59,38 +51,17 @@ class MomoMakePaymentRequestGateway extends AbstractGateway
         return $this->setParameter('typebouton', $type);
     }
 
-    public function getCIP(){
-        return $this->getParameter('_cIP');
+    public function getEmail(){
+        return $this->getParameter('_email');
     }
 
-    public function setcIP($cip){
-        return $this->setParameter('_cIP', $cip);
-    }
-
-    public function setX($x){
-        return $this->setParameter('submit.x', $x);
-    }
-
-    public function getX(){
-        return $this->getParameter('submit.x');
-    }
-
-    public function setY($y){
-        return $this->setParameter('submit.y', $y);
-    }
-
-    public function getY(){
-        return $this->getParameter('submit.y');
+    public function setEmail($email){
+        return $this->setParameter('_email', $email);
     }
 
     public function purchase(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\CreditCardPaymentProcessor\Message\RedirectPurchaseRequest', $parameters);
-    }
-
-    public function completePurchase(array $parameters = array())
-    {
-        return $this->createRequest('\Omnipay\CreditCardPaymentProcessor\Message\RedirectCompletePurchaseRequest', $parameters);
+        return $this->createRequest('\Omnipay\Momoc\Message\RedirectPurchaseRequest', $parameters);
     }
 
     function __call($name, $arguments)

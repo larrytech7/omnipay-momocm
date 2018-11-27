@@ -1,11 +1,11 @@
 <?php
 /**
- * Created by xu
+ * Created by Akah
  * Date: 22/9/16
  * Time: 10:09 AM
  */
 
-namespace Omnipay\CreditCardPaymentProcessor\Message;
+namespace Omnipay\Momoc\Message;
 
 use Omnipay\Tests\TestCase;
 
@@ -23,18 +23,13 @@ class RedirectPurchaseRequestTest extends TestCase
         $this->request = new RedirectPurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
 
         $this->options = [
-            'card' => [
-                'email' => 'xuding@spacebib.com',
-            ],
-            'amount' => 10.00,
-            'currency' => 'THB',
+            'idbouton' =>4 ,
+            '_amount' => 10.00,
+            '_tel' => '678656032',
             'description' => 'Marina Run 2016',
             'transactionId' => 12,
             'returnUrl' => 'https://www.example.com/return',
             'notifyUrl' => 'https://www.example.com/notify',
-            'invoiceNo' => '20191212-123123',
-            'merchantId' => 'merchant_123',
-            'secretKey' => 'secret_test',
         ];
     }
 
@@ -84,26 +79,6 @@ class RedirectPurchaseRequestTest extends TestCase
         ];
 
         $this->assertEquals($expected, $result);
-    }
-
-    public function testGetData_currency()
-    {
-        $this->options = array_merge($this->options, [
-            'amount' => 1999.00,
-            'currency' => 'THB',
-        ]);
-        $this->request->initialize($this->options);
-        $result = $this->request->getData();
-        $this->assertEquals('000000199900', $result['amount']);
-
-
-        $this->options = array_merge($this->options, [
-            'amount' => 1999.00,
-            'currency' => 'JPY',
-        ]);
-        $this->request->initialize($this->options);
-        $result = $this->request->getData();
-        $this->assertEquals('000000001999', $result['amount']);
     }
 
     public function testSendData()

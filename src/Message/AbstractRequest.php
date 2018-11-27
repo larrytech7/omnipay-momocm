@@ -1,22 +1,22 @@
 <?php
 /**
- * Created by xu
- * Date: 22/9/16
+ * Created by Akah
+ * Date: 22/9/2018
  * Time: 2:16 PM
  */
 
-namespace Omnipay\CreditCardPaymentProcessor\Message;
+namespace Omnipay\Momoc\Message;
 
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     const VERSION = '6.9';
 
-    public function getMerchantEmail(){
+    public function getEmail(){
         return $this->getParameter('_email');
     }
 
-    public function setMerchantEmail($email){
+    public function setEmail($email){
         return $this->setParameter('_email', $email);
     }
 
