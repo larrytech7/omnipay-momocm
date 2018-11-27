@@ -1,24 +1,25 @@
 {
-    "name": "dilab/omnipay-2c2p",
-    "description": "2c2p gateway for Omnipay payment processing library",
+    "name": "larrytech7/omnipay-momocm",
+    "description": "MTN CAM momo driver gateway for Omnipay payment processing library",
     "keywords": [
         "gateway",
         "merchant",
         "omnipay",
-        "2c2p"
+        "momoc"
     ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "xu ding",
-            "email": "thedilab@gmail.com"
+            "name": "Akah Harvey",
+            "email": "larryakah@gmail.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {
         "omnipay/common": "3.0-beta.1",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^1.1",
+        "league/omnipay": "^3.0"
     },
     "require-dev": {
         "omnipay/tests": "3.0-beta.1"

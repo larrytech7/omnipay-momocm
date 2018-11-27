@@ -6,17 +6,14 @@ use Omnipay\Common\Message\AbstractResponse;
 
 class RedirectPurchaseResponse extends AbstractResponse
 {
-    private $endPointTest = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
-    private $endPointProduction = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
-
     public function isSuccessful()
     {
-        return false;//$this->isSuccessful(); //default was false
+        return json_decode($this->getMessage())['StatusCode'] == '01'; //default was false
     }
 
     public function isRedirect()
     {
-        return true;//$this->isRedirect(); //DEFAULT was : true
+        return false;//$this->isRedirect(); //DEFAULT was : true
     }
 
     public function getTransactionId()
@@ -27,7 +24,7 @@ class RedirectPurchaseResponse extends AbstractResponse
 
     public function getRedirectUrl()
     {
-        return $this->getRedirectUrl();
+        return '';
     }
 
     public function getRedirectMethod()

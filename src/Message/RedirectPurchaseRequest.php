@@ -5,6 +5,8 @@ namespace Omnipay\Momoc\Message;
 class RedirectPurchaseRequest extends AbstractRequest
 {
 
+    protected $requestEndpoint = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
+
     public function getData()
     {
         $data = [
@@ -53,7 +55,9 @@ class RedirectPurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        return $this->response = new RedirectPurchaseResponse($this, $data);
+        $response = $this->httpClient->request($this->requestEndpoint.http_build_query($data), null, array());
+        //$response = $httpRequest->send();
+        return $this->response = new RedirectPurchaseResponse($this, $response->getBody());
     }
 
 }

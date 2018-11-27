@@ -29,9 +29,8 @@ final class RedirectGatewayTest extends GatewayTestCase
             'currency' => 'XAF',
             'description' => 'Marina Run 2016',
             'transactionId' => 12,
-            'returnUrl' => 'https://www.example.com/return',
-            'notifyUrl' => 'https://www.example.com/notify',
-            'invoiceNo' => '20191212-123123'
+            'returnUrl' => '',
+            'notifyUrl' => ''
         ];
         $this->assertSame('larryakah@gmail.com', $this->gateway->getDefaultParameters()['_email']);
         $this->assertSame(2, $this->gateway->getDefaultParameters()['idbouton']);
@@ -43,7 +42,7 @@ final class RedirectGatewayTest extends GatewayTestCase
     {
         $response = $this->gateway->purchase($this->options)->send();
         $this->assertFalse($response->isSuccessful());
-        $this->assertTrue($response->isRedirect());
+        $this->assertTrue(!$response->isRedirect());
         //$this->assertEquals('https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml', $response->getRedirectUrl());
 
     }

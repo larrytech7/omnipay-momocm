@@ -22,15 +22,14 @@ class RedirectPurchaseResponseTest extends TestCase
         $request = $this->getMockRequest();
         $response = new RedirectPurchaseResponse($request, $data);
 
-        $this->assertFalse($response->isSuccessful());
-        $this->assertTrue($response->isRedirect());
+        $this->assertTrue($response->isSuccessful());
+        $this->assertFalse($response->isRedirect());
         $this->assertFalse($response->isCancelled());
-        $this->assertNull($response->getMessage());
+        $this->assertNotNull($response->getMessage());
         $this->assertNull($response->getTransactionReference());
-        $this->assertTrue($response->isTransparentRedirect());
         $this->assertSame(123, $response->getTransactionId());
-        $this->assertSame('https://t.2c2p.com/RedirectV3/Payment', $response->getRedirectUrl());
-        $this->assertSame('POST', $response->getRedirectMethod());
+        $this->assertSame('', $response->getRedirectUrl());
+        $this->assertSame('GET', $response->getRedirectMethod());
         $this->assertEquals($data, $response->getRedirectData());
     }
 }
