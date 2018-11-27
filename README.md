@@ -14,7 +14,7 @@ processing library for PHP 5.3+. This package implements MTN Mobile money suppor
 Omnipay is installed via [Composer](http://getcomposer.org/). 
 To install, go to your project root directory and simply run :
 
-    $ composer require larrytech7/omnipay-momocm
+    $ composer require league/omnipay larrytech7/omnipay-momocm
 
 ## Basic Usage
 

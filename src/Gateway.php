@@ -18,7 +18,7 @@ use Omnipay\Common\AbstractGateway;
  * @method \Omnipay\Common\Message\RequestInterface deleteCard(array $options = array())
  * @method \Omnipay\Common\Message\RequestInterface completePurchase(array $options = array())
  */
-class MomoMakePaymentRequestGateway extends AbstractGateway
+class Gateway extends AbstractGateway
 {
 
     public function getName()
