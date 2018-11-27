@@ -11,18 +11,10 @@ processing library for PHP 5.3+. This package implements 2c2p support for Omnipa
 
 ## Installation
 
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
-to your `composer.json` file:
+Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply run `composer require larrytech7/omnipay-momocm` 
+in your project's root directory
 
-```json
-{
-    "require": {
-        "dilab/omnipay-2c2p": "~2.0"
-    }
-}
-```
-
-And run composer to update your dependencies:
+You may want to run composer to update your dependencies:
 
     $ curl -s http://getcomposer.org/installer | php
     $ php composer.phar update
@@ -32,8 +24,28 @@ And run composer to update your dependencies:
 The following methods are provided by this package:
 
 + purchase
-+ completePurchase
 
+```
+use Omnipay\Omnipay;
+
+$gateway = Omnipay::create('MomoRequestPayment');
+$gateway->setEmail(''); //enter your merchant email obtained from the MTN developer portal
+
+$response = $gateway->purchase(array(
+    '_amount' => 100, //the amount to charge
+    '_tel' => '+237677400000' //your customer's phone number
+))->send();
+
+if($response->isSuccessful()){
+    $mesage = json_decode($response->getMessage());
+    //save transsaction to database and notify the user
+    //.....
+}else{
+    $message = json_decode($response->getMessage());
+    //get error from the message and notify the user
+    //......
+}
+```
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
 

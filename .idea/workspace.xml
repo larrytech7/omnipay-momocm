@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="">
+    <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="Publishing repository to packagist">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="omnipay-momo.iws" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="MomoMakePaymentRequestGateway.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MomoMakePaymentRequestGateway.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.923077">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state vertical-scroll-proportion="-17.307692">
+              <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
               <folding>
                 <element signature="e#69#1127#0#PHP" expanded="false" />
                 <element signature="e#1195#1269#0#PHP" expanded="false" />
@@ -40,6 +41,22 @@
                 <element signature="e#1931#2010#0#PHP" expanded="false" />
                 <element signature="e#2286#3229#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.35227272">
+                <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -72,16 +89,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-17.641026">
               <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2663707">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -153,7 +160,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/RedirectGateway.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Message/RedirectCompletePurchaseRequest.php" />
         <option value="$PROJECT_DIR$/tests/Message/RedirectCompletePurchaseRequestTest.php" />
         <option value="$PROJECT_DIR$/tests/Message/RedirectPurchaseRequestTest.php" />
@@ -166,6 +172,7 @@
         <option value="$PROJECT_DIR$/tests/RedirectGatewayTest.php" />
         <option value="$PROJECT_DIR$/satis.json" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -384,7 +391,13 @@
       <option name="project" value="LOCAL" />
       <updated>1543315655095</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Publishing repository to packagist">
+      <created>1543315682268</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543315682268</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -749,19 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.47727272">
-            <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/omnipay/common/src/Common/Message/AbstractResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34739178">
@@ -816,14 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Message/RedirectPurchaseResponseTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.641026">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/omnipay/common/src/Common/Http/ClientInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18756936">
@@ -870,24 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MomoMakePaymentRequestGateway.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#69#1127#0#PHP" expanded="false" />
-            <element signature="e#1195#1269#0#PHP" expanded="false" />
-            <element signature="e#1275#1537#0#PHP" expanded="false" />
-            <element signature="e#1543#1627#0#PHP" expanded="false" />
-            <element signature="e#1633#1725#0#PHP" expanded="false" />
-            <element signature="e#1731#1819#0#PHP" expanded="false" />
-            <element signature="e#1825#1925#0#PHP" expanded="false" />
-            <element signature="e#1931#2010#0#PHP" expanded="false" />
-            <element signature="e#2286#3229#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0769231">
@@ -925,9 +899,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2663707">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5327414">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Message/RedirectPurchaseResponseTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.641026">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MomoMakePaymentRequestGateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.307692">
+          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+          <folding>
+            <element signature="e#69#1127#0#PHP" expanded="false" />
+            <element signature="e#1195#1269#0#PHP" expanded="false" />
+            <element signature="e#1275#1537#0#PHP" expanded="false" />
+            <element signature="e#1543#1627#0#PHP" expanded="false" />
+            <element signature="e#1633#1725#0#PHP" expanded="false" />
+            <element signature="e#1731#1819#0#PHP" expanded="false" />
+            <element signature="e#1825#1925#0#PHP" expanded="false" />
+            <element signature="e#1931#2010#0#PHP" expanded="false" />
+            <element signature="e#2286#3229#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.35227272">
+            <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
