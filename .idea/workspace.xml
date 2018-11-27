@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MomoMakePaymentRequestGateway.php" afterPath="$PROJECT_DIR$/src/MomoMakePaymentRequestGateway.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="omnipay-momo.iws" />
@@ -432,12 +429,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543323493279</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated the package name for the driver">
+      <created>1543324508305</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543324508305</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -479,7 +482,8 @@
     <MESSAGE value="First version read for live Test" />
     <MESSAGE value="Publishing repository to packagist" />
     <MESSAGE value="updating package dependency parameter" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating package dependency parameter" />
+    <MESSAGE value="Updated the package name for the driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the package name for the driver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
