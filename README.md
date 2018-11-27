@@ -1,23 +1,20 @@
 # Omnipay: momocm
 
-**MTN Momoc driver for the Omnipay PHP payment processing library**
+**MTN Mobile money driver for the Omnipay PHP payment processing library**
 
 <!--[![Build Status](https://travis-ci.org/thephpleague/omnipay-2c2p.png?branch=master)](https://travis-ci.org/thephpleague/omnipay-2c2p)-->
 <!--[![Latest Stable Version](https://poser.pugx.org/omnipay/2c2p/version.png)](https://packagist.org/packages/omnipay/2c2p)-->
 <!--[![Total Downloads](https://poser.pugx.org/omnipay/2c2p/d/total.png)](https://packagist.org/packages/omnipay/2c2p)-->
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements 2c2p support for Omnipay.
+processing library for PHP 5.3+. This package implements MTN Mobile money support for Omnipay.
 
 ## Installation
 
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply run `composer require larrytech7/omnipay-momocm` 
-in your project's root directory
+Omnipay is installed via [Composer](http://getcomposer.org/). 
+To install, go to your project root directory and simply run :
 
-You may want to run composer to update your dependencies:
-
-    $ curl -s http://getcomposer.org/installer | php
-    $ php composer.phar update
+    $ composer require larrytech7/omnipay-momocm
 
 ## Basic Usage
 

@@ -22,7 +22,7 @@
     "repositories": [
         { "type" : "vcs", "url" : "https://github.com/larrytech7/omnipay-momocm" }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "require": {
         "omnipay/common": "3.0-beta.1",
         "php-http/guzzle6-adapter": "^1.1",
