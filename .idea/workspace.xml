@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp64\www\omnipay-momo\src\index.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\wamp64\www\omnipay-momo\src\MomoMakePaymentRequestGateway.php" afterPath="$PROJECT_DIR$/src/Gateway.php" />
-      <change type="MOVED" beforePath="C:\wamp64\www\omnipay-momo\tests\RedirectGatewayTest.php" afterPath="$PROJECT_DIR$/tests/GatewayTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -49,13 +46,13 @@
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="MarkdownFxPreviewEditor">
+          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.4852273">
-                <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <first_editor vertical-scroll-proportion="0.3272727">
+                <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -68,6 +65,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.1538463">
               <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.871795">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -394,7 +401,13 @@
       <option name="project" value="LOCAL" />
       <updated>1543335619771</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Renamed main Gateway class and updated references in other classes">
+      <created>1543337643697</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1543337643697</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -443,7 +456,8 @@
     <MESSAGE value="updating package dependency parameter" />
     <MESSAGE value="Updated the package name for the driver" />
     <MESSAGE value="Updated package configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated package configuration" />
+    <MESSAGE value="Renamed main Gateway class and updated references in other classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed main Gateway class and updated references in other classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -860,23 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gateway.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0769231">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#69#1127#0#PHP" expanded="false" />
-            <element signature="e#1242#1504#0#PHP" expanded="false" />
-            <element signature="e#1510#1594#0#PHP" expanded="false" />
-            <element signature="e#1600#1692#0#PHP" expanded="false" />
-            <element signature="e#1698#1786#0#PHP" expanded="false" />
-            <element signature="e#1792#1892#0#PHP" expanded="false" />
-            <element signature="e#1898#1977#0#PHP" expanded="false" />
-            <element signature="e#2253#3196#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/AbstractRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.076923">
@@ -917,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.871795">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/GatewayTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1538463">
@@ -933,14 +922,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0769231">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#69#1127#0#PHP" expanded="false" />
+            <element signature="e#1242#1504#0#PHP" expanded="false" />
+            <element signature="e#1510#1594#0#PHP" expanded="false" />
+            <element signature="e#1600#1692#0#PHP" expanded="false" />
+            <element signature="e#1698#1786#0#PHP" expanded="false" />
+            <element signature="e#1792#1892#0#PHP" expanded="false" />
+            <element signature="e#1898#1977#0#PHP" expanded="false" />
+            <element signature="e#2253#3196#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.871795">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.4852273">
-            <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <first_editor vertical-scroll-proportion="0.3272727">
+            <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
             <folding />
           </first_editor>
           <second_editor />
