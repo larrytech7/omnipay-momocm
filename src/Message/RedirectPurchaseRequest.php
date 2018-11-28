@@ -50,13 +50,11 @@ class RedirectPurchaseRequest extends AbstractRequest
     private function amount()
     {
         return str_pad($this->getAmount(), 12, '0', STR_PAD_LEFT);
-        //return $this->getA
     }
 
     public function sendData($data)
     {
-        $response = $this->httpClient->request($this->requestEndpoint.http_build_query($data), null, array());
-        //$response = $httpRequest->send();
+        $response = $this->httpClient->request('GET',$this->requestEndpoint.http_build_query($data), null, http_build_query($data));
         return $this->response = new RedirectPurchaseResponse($this, $response->getBody());
     }
 
