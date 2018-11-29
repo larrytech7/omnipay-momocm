@@ -1,6 +1,7 @@
 <?php
 namespace Omnipay\Momoc\Message;
 
+use GuzzleHttp\Client;
 
 class RedirectPurchaseRequest extends AbstractRequest
 {
@@ -54,7 +55,15 @@ class RedirectPurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $response = $this->httpClient->request('GET',$this->requestEndpoint.http_build_query($data), [], http_build_query($data));
+        $this->httpClient = new Client([
+            'base_uri' => $this->requestEndpoint,
+            'headers' => [
+                'verify' => false
+            ]
+        ]);
+        $response = $this->httpClient->request('GET',$this->requestEndpoint.http_build_query($data),
+            ['verify' => false,
+                'timeout' => 130]);
         return $this->response = new RedirectPurchaseResponse($this, $response->getBody());
     }
 
