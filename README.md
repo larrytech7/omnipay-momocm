@@ -2,7 +2,7 @@
 
 **MTN Mobile money driver for the Omnipay PHP payment processing library**
 
-<!--[![Build Status](https://travis-ci.org/thephpleague/omnipay-2c2p.png?branch=master)](https://travis-ci.org/thephpleague/omnipay-2c2p)-->
+[![Build Status](https://travis-ci.org/thephpleague/omnipay-common.svg?branch=master)](https://travis-ci.org/larrytech7/omnipay-momocm)
 <!--[![Latest Stable Version](https://poser.pugx.org/omnipay/2c2p/version.png)](https://packagist.org/packages/omnipay/2c2p)-->
 <!--[![Total Downloads](https://poser.pugx.org/omnipay/2c2p/d/total.png)](https://packagist.org/packages/omnipay/2c2p)-->
 
@@ -19,7 +19,7 @@ To install, go to your project root directory and simply run :
 OR you can also add the following lines to your composer.json inside the require field parameter
 ```
 "league/omnipay": "^3.0",
-"larrytech7/omnipay-momocm" : "~2.0"
+"larrytech7/omnipay-momocm" : "^3.0"
 ```
 Then run ```composer update``` to fetch it
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -83,8 +84,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.31136364">
-                <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
+              <first_editor vertical-scroll-proportion="0.71590906">
+                <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -92,6 +93,16 @@
           </provider>
           <provider editor-type-id="MarkdownFxPreviewEditor">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -131,6 +142,7 @@
         <option value="$PROJECT_DIR$/tests/GatewayTest.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Message/RedirectPurchaseRequest.php" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -470,7 +482,13 @@
       <option name="project" value="LOCAL" />
       <updated>1543481534446</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="updating readme install section">
+      <created>1543481969635</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1543481969635</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -525,7 +543,8 @@
     <MESSAGE value="Fixed bug on sending request and updated package dependency. Bug stabilized" />
     <MESSAGE value="Updating README documentation on driver usage" />
     <MESSAGE value="Fixed bug on request uri to MTN momo payment url. Their ssl certifcate seriously needs fixing. It's a lot of work to have to manage that in applications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug on request uri to MTN momo payment url. Their ssl certifcate seriously needs fixing. It's a lot of work to have to manage that in applications" />
+    <MESSAGE value="updating readme install section" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating readme install section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1076,11 +1095,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.31136364">
-            <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
+          <first_editor vertical-scroll-proportion="0.71590906">
+            <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
             <folding />
           </first_editor>
           <second_editor />
