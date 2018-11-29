@@ -40,12 +40,12 @@ $response = $gateway->purchase(array(
     '_tel' => '677400000' //your customer's phone number
 ))->send();
 
+$transactionInfo = $response->getMessage(); //an array containing transaction data
+
 if($response->isSuccessful()){
-    $mesage = json_decode($response->getMessage());
     //save transaction to database and notify the user
     //.....
 }else{
-    $message = json_decode($response->getMessage());
     //get error from the message and notify the user
     //......
 }
