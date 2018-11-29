@@ -16,8 +16,9 @@ To install, go to your project root directory and simply run :
 
     $ composer require league/omnipay larrytech7/omnipay-momocm
 
-OR you can also add the following line to your composer.json inside the require tag
+OR you can also add the following lines to your composer.json inside the require field parameter
 ```
+"league/omnipay": "^3.0",
 "larrytech7/omnipay-momocm" : "~2.0"
 ```
 Then run ```composer update``` to fetch it
