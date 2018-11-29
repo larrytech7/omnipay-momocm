@@ -3,38 +3,71 @@ namespace Omnipay\Momoc\Message;
 
 
 use Omnipay\Common\Message\AbstractResponse;
+use Omnipay\Common\Message\RequestInterface;
 
 class RedirectPurchaseResponse extends AbstractResponse
 {
-    public function isSuccessful()
-    {
-        return json_decode($this->getMessage())['StatusCode'] == '01'; //default was false
+
+    protected $headers = [];
+
+    public function __construct(RequestInterface $req, $data, $headers = [] ){
+        parent::__construct($req, $data);
+        $this->request = $req;
+        $this->data = json_decode((string)$data->getBody(), true);
+        $this->headers = $headers;
     }
 
-    public function isRedirect()
+    public function isSuccessful()
     {
-        return false;//$this->isRedirect(); //DEFAULT was : true
+        return $this->data['StatusCode'] == '01'; //default was false
     }
 
     public function getTransactionId()
     {
-        $transaction_response = json_decode($this->getMessage());
-        return $transaction_response['TransactionID']; //$this->getData()['order_id'];
+        return $this->data['TransactionID'];
     }
 
-    public function getRedirectUrl()
+    public function getReceiverNumber(){
+        return $this->data['ReceiverNumber'];
+    }
+
+    public function getStatusCode(){
+        return $this->data['StatusCode'];
+    }
+
+    public function getProcessingNumber(){
+        return $this->data['ProcessingNumber'];
+    }
+
+    public function getComment()
     {
-        return '';
+        return $this->data['OpComment'];
     }
 
-    public function getRedirectMethod()
+    public function getStatusDesc()
     {
-        return 'GET';
+        return $this->data['StatusDesc'];
     }
 
+    public function getOperationType()
+    {
+        return $this->data['OperationType'];
+    }
+
+    /**
+     * returns the data response from the request
+     * @return mixed
+     */
+    public function getMessage(){
+        return json_decode($this->getData()->getBody(), true);
+    }
+
+    /**
+     * @return mixed
+     */
     public function getRedirectData()
     {
-        return $this->getData();
+        return json_decode($this->getData()->getBody(), true);
     }
 
 }

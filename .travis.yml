@@ -8,11 +8,11 @@ php:
 
 sudo: false
 
-before_install:
-  - chmod +x vendor/autoload.php
-
 cache:
     directories:
       - $HOME/.composer/cache
 
 script: composer install --prefer-dist --no-interaction
+
+before_install:
+  - chmod +x ./vendor/autoload.php

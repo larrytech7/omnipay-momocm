@@ -9,14 +9,12 @@ class RedirectPurchaseResponseTest extends TestCase
     public function testConstruct_ok()
     {
         $data = [
-            'version' => '6.9',
-            'merchant_id' => '874764000000130',
-            'payment_description' => 'Marina Run 2015',
-            'order_id' => 123,
-            'invoice_no' => '',
-            'amount' => '',
-            'hash_value' => '',
-            'customer_email'=>'xuding@spacebib.com'
+            'idbouton' =>4 ,
+            'typebouton' =>'PAIE' ,
+            '_amount' => 100.00,
+            '_tel' => '678656032',
+            'description' => 'Marina Run 2016',
+            'currency' => 'XAF',
         ];
 
         $request = $this->getMockRequest();
@@ -24,10 +22,8 @@ class RedirectPurchaseResponseTest extends TestCase
 
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertFalse($response->isCancelled());
         $this->assertNotNull($response->getMessage());
         $this->assertNull($response->getTransactionReference());
-        $this->assertSame(123, $response->getTransactionId());
         $this->assertSame('', $response->getRedirectUrl());
         $this->assertSame('GET', $response->getRedirectMethod());
         $this->assertEquals($data, $response->getRedirectData());

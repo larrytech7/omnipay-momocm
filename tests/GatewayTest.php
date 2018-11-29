@@ -20,17 +20,14 @@ final class GatewayTest extends GatewayTestCase
         $this->options = [
             'idbouton' =>4,
             'typebouton' =>'PAIE',
-            '_amount' => 2000.00,
+            '_amount' => 100.00,
             '_email' => 'larryakah@gmail.com',
-            '_tel' => '678656032',
+            '_tel' => '675187568',
             '_cIP' => '',
             'submit.x' => 104,
             'submit.y' => 70,
             'currency' => 'XAF',
             'description' => 'Marina Run 2016',
-            'transactionId' => 12,
-            'returnUrl' => '',
-            'notifyUrl' => ''
         ];
         $this->assertSame('larryakah@gmail.com', $this->gateway->getDefaultParameters()['_email']);
         $this->assertSame(2, $this->gateway->getDefaultParameters()['idbouton']);
@@ -42,8 +39,5 @@ final class GatewayTest extends GatewayTestCase
     {
         $response = $this->gateway->purchase($this->options)->send();
         $this->assertFalse($response->isSuccessful());
-        $this->assertTrue(!$response->isRedirect());
-        //$this->assertEquals('https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml', $response->getRedirectUrl());
-
     }
 }
