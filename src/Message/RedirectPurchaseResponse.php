@@ -13,7 +13,7 @@ class RedirectPurchaseResponse extends AbstractResponse
     public function __construct(RequestInterface $req, $data, $headers = [] ){
         parent::__construct($req, $data);
         $this->request = $req;
-        $this->data = json_decode((string)$data->getBody(), true);
+        $this->data = json_decode($data, true);
         $this->headers = $headers;
     }
 
@@ -59,7 +59,7 @@ class RedirectPurchaseResponse extends AbstractResponse
      * @return mixed
      */
     public function getMessage(){
-        return json_decode($this->getData()->getBody(), true);
+        return $this->getData();
     }
 
     /**
@@ -67,7 +67,7 @@ class RedirectPurchaseResponse extends AbstractResponse
      */
     public function getRedirectData()
     {
-        return json_decode($this->getData()->getBody(), true);
+        return json_decode($this->getData(), true);
     }
 
 }
