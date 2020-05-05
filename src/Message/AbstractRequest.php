@@ -14,21 +14,14 @@ abstract class AbstractRequest extends BaseAbstractRequest{
 
     const VERSION = '1.1';
 
-    //used to create a new API user
-    protected $apiUserCreateEndpoint = [
-        'test' => 'https://sandbox.momodeveloper.mtn.com/v1_0/apiuser',
-        'live' => ''
-    ];
-    //endpoint can be used to get api user info and to create api key
-    protected $apiUserGetEndpoint = [
-        'test' => 'https://sandbox.momodeveloper.mtn.com/v1_0/apiuser/',
+    protected $baseEndpoint = [
+        'test' => 'https://sandbox.momodeveloper.mtn.com/',
         'live' => ''
     ];
 
     //configurable headers
     protected $headers = [
-        'X-Reference-Id' => '',
-        'Ocp-Apim-Subscription-Key' => '',
+        'Ocp-Apim-Subscription-Key' => '8cca8a88bf5f40f7bd848b26344e879c',
         'Content-Type' => 'application/json',
         'verify' => false
     ];
@@ -36,7 +29,14 @@ abstract class AbstractRequest extends BaseAbstractRequest{
     abstract protected function getEndpoint();
 
     public function generateUuidV4(){
-        // TODO : Implement v4 generate uuid
+        // v4 generate uuid
+        if (function_exists('com_create_guid') === true)
+			return trim(com_create_guid(), '{}');
+	
+			$data = openssl_random_pseudo_bytes(16);
+			$data[6] = chr(ord($data[6]) & 0x0f | 0x40); // set version to 0100
+			$data[8] = chr(ord($data[8]) & 0x3f | 0x80); // set bits 6-7 to 10
+			return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
     public function getHeaders(){
@@ -45,6 +45,7 @@ abstract class AbstractRequest extends BaseAbstractRequest{
 
     public function setHeaders($headers){
         $this->headers = $headers;
+        $this->headers['X-Reference-Id'] = $this->generateUuidV4();
     }
 
     public function getProviderCallbackHost(){
@@ -55,12 +56,12 @@ abstract class AbstractRequest extends BaseAbstractRequest{
         $this->setParameter('providerCallbackHost', $callback);
     }
 
-    public function getCallback(){
-        return $this->getParameter('providerCallbackHost');
+    public function setTestMode($value){
+        $this->setParameter('testMode', $value);
     }
 
-    public function setCallback($callback){
-        $this->setParameter('providerCallbackHost', $callback);
+    public function getTestMode(){
+        return $this->getParameter('testMode');
     }
 
     public function getTel(){
@@ -81,13 +82,7 @@ abstract class AbstractRequest extends BaseAbstractRequest{
 
     public function sendData($data){
         $url = $this->getEndpoint();
-        $this->httpClient = new Client([
-            'base_uri' => $url,
-            'headers' => $this->getHeaders()
-        ]);
-        $response = $this->httpClient->request('POST',$url,
-            ['verify' => false,
-                'timeout' => 130], json_encode($data));
+        $response = $this->httpClient->request('POST',$url,$this->getHeaders(), json_encode($data));
         return $this->createResponse($response->getBody());
     }
 

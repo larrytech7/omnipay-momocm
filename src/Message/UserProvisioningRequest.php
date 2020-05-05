@@ -2,27 +2,17 @@
 namespace Omnipay\Momoc\Message;
 
 
-use GuzzleHttp\Client;
-
 class UserProvisioningRequest extends AbstractRequest{
 
     public function sendData($data){
         $endpointUrl = $this->getEndpoint();
-        $this->httpClient = new Client([
-            'base_uri' => $endpointUrl,
-            'headers' => [
-                'verify' => false
-            ]
-        ]);
-        $response = $this->httpClient->request('POST',$endpointUrl,
-            ['verify' => false,
-                'timeout' => 130]);
+        $response = $this->httpClient->request('POST',$endpointUrl,$this->getHeaders(), '');
         return $this->response = new UserProvisioningResponse($this, $response->getBody());
     }
 
     public function getData(){
         $data = [
-            'providerCallbackHost' => $this->getCallback(),
+            'providerCallbackHost' => $this->getProviderCallbackHost(),
             'amount' => $this->getAmount()
         ];
 
@@ -36,12 +26,11 @@ class UserProvisioningRequest extends AbstractRequest{
             $this->emptyIfNotFound($data, 'amount') .
             $this->emptyIfNotFound($data, 'providerCallbackHost');
 
-        return strtoupper(hash_hmac('sha256', $strToHash, $this->getCallback(), false));
+        return strtoupper(hash_hmac('sha256', $strToHash, $this->getProviderCallbackHost(), false));
     }
 
     protected function getEndpoint(){
-        return $this->getTestMode() ? $this->apiUserCreateEndpoint['test'] :
-            $this->apiUserCreateEndpoint['live'];
-
+        return ($this->getTestMode() ? $this->baseEndpoint['test'] :
+            $this->baseEndpoint['live']). 'v1_0/apiuser';
     }
 }

@@ -3,22 +3,13 @@ namespace Omnipay\Momoc\Message;
 
 use GuzzleHttp\Client;
 
-class RedirectPurchaseRequest extends AbstractRequest{
+class RedirectPurchaseRequest extends \Omnipay\Common\Message\AbstractRequest{
 
     protected $requestEndpoint = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
 
     public function getData(){
         $data = [
-            'version' => self::VERSION,
-            'idbouton' => $this->getIdbouton(),
-            'typebouton' => $this->getTypebouton(),
             'payment_description' => $this->getDescription(),
-            '_tel' => $this->getTel(),
-            '_amount' => $this->amount(),
-            '_cIP' => $this->getCIP(),
-            '_email' => $this->getEmail(),
-            'submit.x' => $this->getX(),
-            'submit.y' => $this->getY(),
             'result_url_1' => $this->getReturnUrl(),
             'result_url_2' => $this->getNotifyUrl()
         ];

@@ -13,11 +13,9 @@ use Omnipay\Common\Message\RequestInterface;
 
 abstract class AbstractResponse extends BaseAbstractResponse{
 
-    public function __construct(RequestInterface $req, $data, $headers = [] ){
-        parent::__construct($req, $data);
+    public function __construct(RequestInterface $req, $data){
         $this->request = $req;
         $this->data = json_decode($data, true);
-        $this->headers = $headers;
     }
 
     /**

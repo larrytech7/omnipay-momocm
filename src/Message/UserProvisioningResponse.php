@@ -3,20 +3,42 @@ namespace Omnipay\Momoc\Message;
 
 class UserProvisioningResponse extends AbstractResponse{
 
-    public function getComment(){
-        return $this->data['OpComment'];
-    }
-
-    public function getStatusDesc(){
-        return $this->data['StatusDesc'];
+    /**
+     * get the message part of the request result data
+     * @return string
+     */
+    public function getMessage() {
+        $data = $this->data;
+        if(is_array($data)){
+            return array_key_exists('message', $data) ? $data['message'] : 'No data';
+        }
+        return '';
     }
 
     /**
-     * returns the data response from the request
-     * @return mixed
+     * Get the request status description as an array of code and description
+     * @return array|mixed
      */
-    public function getMessage(){
-        return $this->getData();
+    public function getRequestStatusDescription(){
+        $code = intval($this->getCode());
+        if($code == 400){
+            return [
+                'code' => $code,
+                'message' => 'Bad request. Invalid data was sent'
+            ];
+        }else if($code == 409){
+            return [
+                'code' => $code,
+                'message' => array_key_exists('message', $this->data) ? $this->data['message'] : 'Error in request. Result not processed properly.'
+            ];
+        }else if($code == 500){
+            return [
+                'code' => $code,
+                'message' => 'Internal server Error in request. Result not processed properly.'
+            ];
+        }else{
+            return $this->data;
+        }
     }
 
 }

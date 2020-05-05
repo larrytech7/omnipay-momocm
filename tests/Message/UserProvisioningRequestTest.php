@@ -25,9 +25,8 @@ class UserProvisioningRequestTest extends TestCase{
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
             'amount' => 100.00
         ];
-        $this->request->setCallback('http://localhost/ominipay-momo');
-        $this->request->setAmount(100.00);
         $this->request->setTestMode(true);
+        $this->request->setHeaders(['Content-Type' => 'application/json']);
     }
 
     public function testGetData(){
@@ -35,9 +34,13 @@ class UserProvisioningRequestTest extends TestCase{
 
         $result = $this->request->getData();
 
+        $strToHash = '100' . 'http://localhost/ominipay-momo';
+
+        $hash = strtoupper(hash_hmac('sha256', $strToHash, 'http://localhost/ominipay-momo', false));
         $expected = [
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
-            'amount' => 100.0
+            'amount' => 100.0,
+            'hash_value' => $hash
         ];
 
         $this->assertEquals($expected, $result);

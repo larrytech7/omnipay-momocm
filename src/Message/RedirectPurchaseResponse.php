@@ -3,7 +3,7 @@ namespace Omnipay\Momoc\Message;
 
 use Omnipay\Common\Message\RequestInterface;
 
-class RedirectPurchaseResponse extends AbstractResponse{
+class RedirectPurchaseResponse extends \Omnipay\Common\Message\AbstractResponse{
 
     protected $headers = [];
 
