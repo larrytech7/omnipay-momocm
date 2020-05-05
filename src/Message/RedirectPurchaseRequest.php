@@ -3,13 +3,11 @@ namespace Omnipay\Momoc\Message;
 
 use GuzzleHttp\Client;
 
-class RedirectPurchaseRequest extends AbstractRequest
-{
+class RedirectPurchaseRequest extends AbstractRequest{
 
     protected $requestEndpoint = 'https://developer.mtn.cm/OnlineMomoWeb/faces/transaction/transactionRequest.xhtml?';
 
-    public function getData()
-    {
+    public function getData(){
         $data = [
             'version' => self::VERSION,
             'idbouton' => $this->getIdbouton(),
@@ -53,8 +51,7 @@ class RedirectPurchaseRequest extends AbstractRequest
         return str_pad($this->getAmount(), 12, '0', STR_PAD_LEFT);
     }
 
-    public function sendData($data)
-    {
+    public function sendData($data){
         $this->httpClient = new Client([
             'base_uri' => $this->requestEndpoint,
             'headers' => [
@@ -67,4 +64,8 @@ class RedirectPurchaseRequest extends AbstractRequest
         return $this->response = new RedirectPurchaseResponse($this, $response->getBody());
     }
 
+    protected function getEndpoint(){
+        // TODO: Implement getEndpoint() method.
+
+    }
 }

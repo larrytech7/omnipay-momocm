@@ -1,12 +1,9 @@
 <?php
 namespace Omnipay\Momoc\Message;
 
-
-use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 
-class RedirectPurchaseResponse extends AbstractResponse
-{
+class RedirectPurchaseResponse extends AbstractResponse{
 
     protected $headers = [];
 

@@ -7,39 +7,60 @@
 
 namespace Omnipay\Momoc\Message;
 
+use Omnipay\Common\Http\Client;
+use \Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 
-abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
-{
-    const VERSION = '6.9';
+abstract class AbstractRequest extends BaseAbstractRequest{
 
-    public function getEmail(){
-        return $this->getParameter('_email');
+    const VERSION = '1.1';
+
+    //used to create a new API user
+    protected $apiUserCreateEndpoint = [
+        'test' => 'https://sandbox.momodeveloper.mtn.com/v1_0/apiuser',
+        'live' => ''
+    ];
+    //endpoint can be used to get api user info and to create api key
+    protected $apiUserGetEndpoint = [
+        'test' => 'https://sandbox.momodeveloper.mtn.com/v1_0/apiuser/',
+        'live' => ''
+    ];
+
+    //configurable headers
+    protected $headers = [
+        'X-Reference-Id' => '',
+        'Ocp-Apim-Subscription-Key' => '',
+        'Content-Type' => 'application/json',
+        'verify' => false
+    ];
+
+    abstract protected function getEndpoint();
+
+    public function generateUuidV4(){
+        // TODO : Implement v4 generate uuid
     }
 
-    public function setEmail($email){
-        return $this->setParameter('_email', $email);
+    public function getHeaders(){
+        return $this->headers;
     }
 
-    public function getIdbouton()
-    {
-        return $this->getParameter('idbouton');
+    public function setHeaders($headers){
+        $this->headers = $headers;
     }
 
-    public function setIdbouton($btnID)
-    {
-        return $this->setParameter('idbouton', $btnID);
+    public function getProviderCallbackHost(){
+        return $this->getParameter('providerCallbackHost');
     }
 
-    public function getTypebouton(){
-        return $this->getParameter('typebouton');
+    public function setProviderCallbackHost($callback){
+        $this->setParameter('providerCallbackHost', $callback);
     }
 
-    public function setTypebouton($type){
-        return $this->setParameter('typebouton', $type);
+    public function getCallback(){
+        return $this->getParameter('providerCallbackHost');
     }
 
-    public function getCIP(){
-        return $this->getParameter('_cIP');
+    public function setCallback($callback){
+        $this->setParameter('providerCallbackHost', $callback);
     }
 
     public function getTel(){
@@ -50,55 +71,31 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('_tel', $tel);
     }
 
-    public function setcIP($cip){
-        return $this->setParameter('_cIP', $cip);
-    }
-
     public function getAmount(){
-        return $this->getParameter('_amount');
+        return $this->getParameter('amount');
     }
 
     public function setAmount($amt){
-        return $this->setParameter('_amount', $amt);
+        return $this->setParameter('amount', $amt);
     }
 
-    public function setX($x){
-        return $this->setParameter('submit.x', $x);
+    public function sendData($data){
+        $url = $this->getEndpoint();
+        $this->httpClient = new Client([
+            'base_uri' => $url,
+            'headers' => $this->getHeaders()
+        ]);
+        $response = $this->httpClient->request('POST',$url,
+            ['verify' => false,
+                'timeout' => 130], json_encode($data));
+        return $this->createResponse($response->getBody());
     }
 
-    public function getX(){
-        return $this->getParameter('submit.x');
+    protected function createResponse($data){
+        return $this->response = new UserProvisioningResponse($this, $data);
     }
 
-    public function setY($y){
-        return $this->setParameter('submit.y', $y);
-    }
-
-    public function getY(){
-        return $this->getParameter('submit.y');
-    }
-
-    public function getData()
-    {
-        $this->validate(
-            'idbouton',
-            'typebouton',
-            '_cIP',
-            '_tel',
-            '_amount',
-            '_email',
-            'submit.x',
-            'submit.y',
-            'returnUrl',
-            'notifyUrl'
-        );
-    }
-
-    protected function emptyIfNotFound($haystack, $needle)
-    {
-        if (!isset($haystack[$needle])) {
-            return '';
-        }
-        return $haystack[$needle];
+    protected function emptyIfNotFound($haystack, $needle){
+        return array_key_exists($needle, $haystack) ? $haystack[$needle] : '';
     }
 }

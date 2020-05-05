@@ -9,8 +9,8 @@ namespace Omnipay\Momoc\Message;
 
 use Omnipay\Tests\TestCase;
 
-class RedirectPurchaseRequestTest extends TestCase
-{
+class RedirectPurchaseRequestTest extends TestCase{
+
     /**
      * @var RedirectPurchaseRequest
      */
@@ -32,8 +32,7 @@ class RedirectPurchaseRequestTest extends TestCase
         ];
     }
 
-    public function testGetData()
-    {
+    public function testGetData(){
         $this->request->initialize($this->options);
 
         $result = $this->request->getData();

@@ -11,33 +11,29 @@ final class GatewayTest extends GatewayTestCase
     /** @var array */
     private $options;
 
-    public function setUp()
-    {
+    public function setUp(){
         parent::setUp();
 
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
+        $this->gateway->setTestMode(true);
 
         $this->options = [
-            'idbouton' =>4,
-            'typebouton' =>'PAIE',
-            '_amount' => 100.00,
-            '_email' => 'larryakah@gmail.com',
-            '_tel' => '675187568',
-            '_cIP' => '',
-            'submit.x' => 104,
-            'submit.y' => 70,
-            'currency' => 'XAF',
-            'description' => 'Marina Run 2016',
+            'providerCallbackHost' =>'http://localhost/ominipay-momo',
+            'amount' => 100.00
         ];
-        $this->assertSame('larryakah@gmail.com', $this->gateway->getDefaultParameters()['_email']);
-        $this->assertSame(2, $this->gateway->getDefaultParameters()['idbouton']);
-        $this->assertSame('PAIE', $this->gateway->getDefaultParameters()['typebouton']);
+
+        $this->assertTrue($this->gateway->getTestMode());
+        $this->assertSame('http://localhost/ominipay-momo', $this->gateway->getDefaultParameters()['providerCallbackHost']);
         $this->assertInstanceOf(Gateway::class, $this->gateway);
     }
 
-    public function testPurchase()
-    {
-        $response = $this->gateway->purchase($this->options)->send();
+    public function testPurchase(){
+        //$response = $this->gateway->purchase($this->options)->send();
+        //$this->assertFalse($response->isSuccessful());
+    }
+
+    public function testAuthorize(){
+        $response = $this->gateway->authorize($this->options)->send();
         $this->assertFalse($response->isSuccessful());
     }
 }
