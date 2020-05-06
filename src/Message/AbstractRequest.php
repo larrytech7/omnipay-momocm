@@ -7,7 +7,6 @@
 
 namespace Omnipay\Momoc\Message;
 
-use Omnipay\Common\Http\Client;
 use \Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 
 abstract class AbstractRequest extends BaseAbstractRequest{
@@ -22,8 +21,7 @@ abstract class AbstractRequest extends BaseAbstractRequest{
     //configurable headers
     protected $headers = [
         'Ocp-Apim-Subscription-Key' => '8cca8a88bf5f40f7bd848b26344e879c',
-        'Content-Type' => 'application/json',
-        'verify' => false
+        'Content-Type' => 'application/json'
     ];
 
     abstract protected function getEndpoint();

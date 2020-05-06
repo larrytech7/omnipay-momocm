@@ -5,9 +5,16 @@ namespace Omnipay\Momoc\Message;
 class UserProvisioningRequest extends AbstractRequest{
 
     public function sendData($data){
+        if(array_key_exists('amount', $data)){
+            unset($data['amount']);
+        }
+        if(array_key_exists('hash_value', $data)){
+            unset($data['hash_value']);
+        }
         $endpointUrl = $this->getEndpoint();
-        $response = $this->httpClient->request('POST',$endpointUrl,$this->getHeaders(), json_encode($data));
-        return $this->response = new UserProvisioningResponse($this, $response->getBody(),$this->getHeaders());
+        $body = json_encode($data);
+        $response = $this->httpClient->request('POST',$endpointUrl,$this->getHeaders(), $body);
+        return $this->response = new UserProvisioningResponse($this, $response->getBody()->getContents(),$this->getHeaders());
     }
 
     public function getData(){
