@@ -14,5 +14,7 @@ cache:
 
 script: composer install --prefer-dist --no-interaction
 
-before_install:
-  - chmod +x ./vendor/autoload.php
+#before_install:
+ # - chmod +x ./vendor/autoload.php
+
+script: ./vendor/bin/phpunit tests
