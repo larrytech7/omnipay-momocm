@@ -8,16 +8,6 @@ use Omnipay\Common\AbstractGateway;
  *
  * This driver is based on the official MTNC momo payment Documentation
  * @link https://momodeveloper.mtn.com/
- * @method \Omnipay\Common\Message\RequestInterface completeAuthorize(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface capture(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface refund(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface void(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface createCard(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface updateCard(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface deleteCard(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface completePurchase(array $options = array())
- * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = array())
- * @method \Omnipay\Common\Message\RequestInterface fetchTransaction(array $options = [])
  */
 class Gateway extends AbstractGateway{
 
@@ -30,7 +20,7 @@ class Gateway extends AbstractGateway{
     }
 
     public function setProviderCallbackHost($callback){
-        $this->setParameter('providerCallbackHost', $callback);
+        return $this->setParameter('providerCallbackHost', $callback);
     }
 
     /**
@@ -39,7 +29,8 @@ class Gateway extends AbstractGateway{
      */
     public function getDefaultParameters(){
         return [
-            'providerCallbackHost' => 'http://localhost/ominipay-momo'
+            'providerCallbackHost' => 'http://localhost/ominipay-momo',
+            'testMode' => true
         ];
     }
 
@@ -56,14 +47,5 @@ class Gateway extends AbstractGateway{
         return $this->createRequest('\Omnipay\Momoc\Message\RedirectPurchaseRequest', $parameters);
     }
 
-    function __call($name, $arguments)
-    {
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface completeAuthorize(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface capture(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface refund(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface void(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface createCard(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface updateCard(array $options = array())
-        // TODO: Implement @method \Omnipay\Common\Message\RequestInterface deleteCard(array $options = array())
-    }
+    
 }

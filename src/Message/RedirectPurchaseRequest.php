@@ -10,13 +10,20 @@ class RedirectPurchaseRequest extends \Omnipay\Common\Message\AbstractRequest{
     public function getData(){
         $data = [
             'payment_description' => $this->getDescription(),
-            'result_url_1' => $this->getReturnUrl(),
             'result_url_2' => $this->getNotifyUrl()
         ];
 
         $data['hash_value'] = $this->hashValue($data);
 
         return $data;
+    }
+
+    public function getProviderCallbackHost(){
+        return $this->getParameter('providerCallbackHost');
+    }
+
+    public function setProviderCallbackHost($callback){
+        $this->setParameter('providerCallbackHost', $callback);
     }
 
     private function hashValue($data)

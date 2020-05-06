@@ -44,8 +44,7 @@ abstract class AbstractRequest extends BaseAbstractRequest{
     }
 
     public function setHeaders($headers){
-        $this->headers = $headers;
-        $this->headers['X-Reference-Id'] = $this->generateUuidV4();
+        $this->headers = array_merge($headers,  ['X-Reference-Id' => $this->generateUuidV4()]);
     }
 
     public function getProviderCallbackHost(){
@@ -53,11 +52,11 @@ abstract class AbstractRequest extends BaseAbstractRequest{
     }
 
     public function setProviderCallbackHost($callback){
-        $this->setParameter('providerCallbackHost', $callback);
+        return $this->setParameter('providerCallbackHost', $callback);
     }
 
     public function setTestMode($value){
-        $this->setParameter('testMode', $value);
+        return $this->setParameter('testMode', $value);
     }
 
     public function getTestMode(){

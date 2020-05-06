@@ -15,11 +15,10 @@ final class GatewayTest extends GatewayTestCase
         parent::setUp();
 
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
-        $this->gateway->setTestMode(true);
 
         $this->options = [
             'providerCallbackHost' =>'http://localhost/ominipay-momo',
-            'amount' => 100.00
+            'amount' => 100.00,
         ];
 
         $this->assertTrue($this->gateway->getTestMode());
@@ -34,8 +33,10 @@ final class GatewayTest extends GatewayTestCase
 
     public function testAuthorize(){
         $response = $this->gateway->authorize($this->options)->send();
+        var_dump($response);
         $this->assertInstanceOf(\Omnipay\Momoc\Message\UserProvisioningResponse::class, $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
     }
+
 }

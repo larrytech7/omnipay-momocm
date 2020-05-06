@@ -25,9 +25,14 @@ class UserProvisioningRequestTest extends TestCase{
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
             'amount' => 100.00
         ];
+       
         $this->request->initialize($this->options);
         $this->request->setTestMode(true);
-        $this->request->setHeaders(['Content-Type' => 'application/json']);
+        $this->request->setHeaders([
+            'Ocp-Apim-Subscription-Key' => '8cca8a88bf5f40f7bd848b26344e879c',
+            'Content-Type' => 'application/json',
+            'verify' => false
+        ]);
     }
 
     public function testGetEndpoint(){
@@ -35,6 +40,8 @@ class UserProvisioningRequestTest extends TestCase{
 
         $this->request->setTestMode(false);
         $this->assertEquals('v1_0/apiuser', $this->request->getEndpoint());
+
+        $this->request->setTestMode(false);
     }
 
     public function testGetData(){
