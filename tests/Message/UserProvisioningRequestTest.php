@@ -25,12 +25,19 @@ class UserProvisioningRequestTest extends TestCase{
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
             'amount' => 100.00
         ];
+        $this->request->initialize($this->options);
         $this->request->setTestMode(true);
         $this->request->setHeaders(['Content-Type' => 'application/json']);
     }
 
+    public function testGetEndpoint(){
+        $this->assertEquals('https://sandbox.momodeveloper.mtn.com/v1_0/apiuser', $this->request->getEndpoint());
+
+        $this->request->setTestMode(false);
+        $this->assertEquals('v1_0/apiuser', $this->request->getEndpoint());
+    }
+
     public function testGetData(){
-        $this->request->initialize($this->options);
 
         $result = $this->request->getData();
 

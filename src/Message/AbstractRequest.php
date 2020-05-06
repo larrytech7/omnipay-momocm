@@ -86,8 +86,8 @@ abstract class AbstractRequest extends BaseAbstractRequest{
         return $this->createResponse($response->getBody());
     }
 
-    protected function createResponse($data){
-        return $this->response = new UserProvisioningResponse($this, $data);
+    protected function createResponse($data, $header = []){
+        return $this->response = new UserProvisioningResponse($this, $data, $header);
     }
 
     protected function emptyIfNotFound($haystack, $needle){

@@ -6,8 +6,8 @@ class UserProvisioningRequest extends AbstractRequest{
 
     public function sendData($data){
         $endpointUrl = $this->getEndpoint();
-        $response = $this->httpClient->request('POST',$endpointUrl,$this->getHeaders(), '');
-        return $this->response = new UserProvisioningResponse($this, $response->getBody());
+        $response = $this->httpClient->request('POST',$endpointUrl,$this->getHeaders(), json_encode($data));
+        return $this->response = new UserProvisioningResponse($this, $response->getBody(),$this->getHeaders());
     }
 
     public function getData(){
@@ -29,7 +29,7 @@ class UserProvisioningRequest extends AbstractRequest{
         return strtoupper(hash_hmac('sha256', $strToHash, $this->getProviderCallbackHost(), false));
     }
 
-    protected function getEndpoint(){
+    public function getEndpoint(){
         return ($this->getTestMode() ? $this->baseEndpoint['test'] :
             $this->baseEndpoint['live']). 'v1_0/apiuser';
     }

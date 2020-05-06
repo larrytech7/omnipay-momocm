@@ -55,8 +55,4 @@ class RedirectPurchaseRequest extends \Omnipay\Common\Message\AbstractRequest{
         return $this->response = new RedirectPurchaseResponse($this, $response->getBody());
     }
 
-    protected function getEndpoint(){
-        // TODO: Implement getEndpoint() method.
-
-    }
 }
