@@ -30,18 +30,8 @@ class UserProvisioningRequestTest extends TestCase{
         $this->request->setTestMode(true);
         $this->request->setHeaders([
             'Ocp-Apim-Subscription-Key' => '8cca8a88bf5f40f7bd848b26344e879c',
-            'Content-Type' => 'application/json',
-            'verify' => false
+            'Content-Type' => 'application/json'
         ]);
-    }
-
-    public function testGetEndpoint(){
-        $this->assertEquals('https://sandbox.momodeveloper.mtn.com/v1_0/apiuser', $this->request->getEndpoint());
-
-        $this->request->setTestMode(false);
-        $this->assertEquals('v1_0/apiuser', $this->request->getEndpoint());
-
-        $this->request->setTestMode(false);
     }
 
     public function testGetData(){
@@ -61,11 +51,17 @@ class UserProvisioningRequestTest extends TestCase{
     }
 
     public function testSendData(){
-        $this->request->initialize($this->options);
-
+        $this->testGetData();
         $this->assertInstanceOf(
             UserProvisioningResponse::class,
             $this->request->sendData($this->request->getData())
         );
+    }
+
+    public function testGetEndpoint(){
+        $this->assertEquals('https://sandbox.momodeveloper.mtn.com/v1_0/apiuser', $this->request->getEndpoint());
+
+        $this->request->setTestMode(false);
+        $this->assertEquals('v1_0/apiuser', $this->request->getEndpoint());
     }
 }

@@ -33,7 +33,7 @@ final class GatewayTest extends GatewayTestCase
 
     public function testAuthorize(){
         $response = $this->gateway->authorize($this->options)->send();
-        var_dump($response);
+        //var_dump($response->getMessage());
         $this->assertInstanceOf(\Omnipay\Momoc\Message\UserProvisioningResponse::class, $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
