@@ -19,6 +19,9 @@ final class GatewayTest extends GatewayTestCase
         $this->options = [
             'providerCallbackHost' =>'http://localhost/ominipay-momo',
             'amount' => 100.00,
+            'api_user' => '',
+            'api_key' => '',
+            'subscription_key' => '',
         ];
 
         $this->assertTrue($this->gateway->getTestMode());

@@ -43,9 +43,8 @@ class Gateway extends AbstractGateway{
         return $this->createRequest('\Omnipay\Momoc\Message\UserProvisioningRequest', $params);
     }
 
-    public function purchase(array $parameters = array()){
-        return $this->createRequest('\Omnipay\Momoc\Message\RedirectPurchaseRequest', $parameters);
+    public function purchase(array $params = array()){
+        return $this->createRequest('\Omnipay\Momoc\Message\UserProvisioningRequest', $params);
     }
 
-    
 }
