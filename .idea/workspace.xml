@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf3e2f5-021f-46cb-9933-28d7a297d0db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Message/AbstractResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Message/UserProvisioningRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Message/UserProvisioningResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Message/AbstractRequest.php" afterPath="$PROJECT_DIR$/src/Message/AbstractRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gateway.php" afterPath="$PROJECT_DIR$/src/Gateway.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/GatewayTest.php" afterPath="$PROJECT_DIR$/tests/GatewayTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Message/RedirectPurchaseRequest.php" afterPath="$PROJECT_DIR$/src/Message/RedirectPurchaseRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Message/RedirectPurchaseRequestTest.php" afterPath="$PROJECT_DIR$/tests/Message/RedirectPurchaseRequestTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Message/RedirectPurchaseResponse.php" afterPath="$PROJECT_DIR$/src/Message/RedirectPurchaseResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="omnipay-momo.iws" />
@@ -38,11 +27,10 @@
       <file leaf-file-name="Gateway.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gateway.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5227275">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="-8.318182">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
-                <element signature="e#69#1151#0#PHP" expanded="false" />
-                <element signature="e#1732#1853#0#PHP" expanded="false" />
+                <marker date="1588795645748" expanded="false" signature="72:246" placeholder=" MTN Cameroon Mobile Money Gateway Driver for Omnipay ..." />
               </folding>
             </state>
           </provider>
@@ -51,9 +39,11 @@
       <file leaf-file-name="UserProvisioningRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Message/UserProvisioningRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0384617">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-              <folding />
+            <state vertical-scroll-proportion="-2.6923077">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <marker date="1588795645770" expanded="true" signature="1351:1358" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,49 +51,31 @@
       <file leaf-file-name="GatewayTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/GatewayTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5227275">
-              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+            <state vertical-scroll-proportion="-9.113636">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserProvisioningRequestTest.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserProvisioningRequestTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.931818">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.48243994">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <element signature="e#1051#1294#0#PHP" expanded="false" />
+                <element signature="e#1549#1824#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractRequest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Message/AbstractRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48243994">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-              <folding>
-                <element signature="e#104#135#0#PHP" expanded="true" />
-                <element signature="e#577#678#0#PHP" expanded="false" />
-                <element signature="e#1646#1721#0#PHP" expanded="false" />
-                <element signature="e#1727#1812#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedirectPurchaseRequestTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Message/RedirectPurchaseRequestTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3636365">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-              <folding>
-                <element signature="e#446#671#0#PHP" expanded="false" />
-                <element signature="e#834#1192#0#PHP" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-2.75">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,10 +121,10 @@
         <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" />
         <option value="$PROJECT_DIR$/tests/Message/ProvisioningRequestTest.php" />
         <option value="$PROJECT_DIR$/src/Message/UserProvisioningRequest.php" />
-        <option value="$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php" />
-        <option value="$PROJECT_DIR$/src/Message/AbstractRequest.php" />
         <option value="$PROJECT_DIR$/tests/GatewayTest.php" />
         <option value="$PROJECT_DIR$/src/Gateway.php" />
+        <option value="$PROJECT_DIR$/src/Message/AbstractRequest.php" />
+        <option value="$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php" />
       </list>
     </option>
   </component>
@@ -547,7 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -556,7 +528,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -616,12 +588,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-            <element signature="e#577#678#0#PHP" expanded="false" />
-            <element signature="e#1646#1721#0#PHP" expanded="false" />
-            <element signature="e#1727#1812#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -638,9 +605,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <element signature="e#69#1151#0#PHP" expanded="false" />
-            <element signature="e#1582#1726#0#PHP" expanded="false" />
-            <element signature="e#2245#3076#0#PHP" expanded="false" />
+            <element signature="e#470#598#0#PHP" expanded="false" />
+            <element signature="e#1214#1374#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -650,9 +616,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <element signature="e#287#850#0#PHP" expanded="false" />
-            <element signature="e#942#1719#0#PHP" expanded="false" />
-            <element signature="e#1725#1829#0#PHP" expanded="false" />
+            <element signature="e#642#763#0#PHP" expanded="false" />
+            <element signature="e#769#1546#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -677,12 +642,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
-          <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-            <element signature="e#577#678#0#PHP" expanded="false" />
-            <element signature="e#1646#1721#0#PHP" expanded="false" />
-            <element signature="e#1727#1812#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,9 +659,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#69#1151#0#PHP" expanded="false" />
-            <element signature="e#1582#1726#0#PHP" expanded="false" />
-            <element signature="e#2245#3076#0#PHP" expanded="false" />
+            <element signature="e#470#598#0#PHP" expanded="false" />
+            <element signature="e#1214#1374#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -739,12 +698,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-            <element signature="e#577#678#0#PHP" expanded="false" />
-            <element signature="e#1646#1721#0#PHP" expanded="false" />
-            <element signature="e#1727#1812#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,9 +707,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#69#1151#0#PHP" expanded="false" />
-            <element signature="e#1582#1726#0#PHP" expanded="false" />
-            <element signature="e#2245#3076#0#PHP" expanded="false" />
+            <element signature="e#470#598#0#PHP" expanded="false" />
+            <element signature="e#1214#1374#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -780,12 +733,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-            <element signature="e#577#678#0#PHP" expanded="false" />
-            <element signature="e#1646#1721#0#PHP" expanded="false" />
-            <element signature="e#1727#1812#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -894,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Message/RedirectPurchaseResponseTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -980,10 +920,10 @@
           <folding>
             <element signature="e#6#92#0#PHP" expanded="true" />
             <element signature="e#128#197#0#PHP" expanded="true" />
-            <element signature="e#553#629#0#PHP" expanded="false" />
-            <element signature="e#634#769#0#PHP" expanded="false" />
-            <element signature="e#775#863#0#PHP" expanded="false" />
-            <element signature="e#1083#1199#0#PHP" expanded="false" />
+            <element signature="e#536#612#0#PHP" expanded="false" />
+            <element signature="e#617#752#0#PHP" expanded="false" />
+            <element signature="e#758#846#0#PHP" expanded="false" />
+            <element signature="e#1066#1182#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -993,7 +933,7 @@
         <state vertical-scroll-proportion="0.67467654">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#270#352#0#PHP" expanded="false" />
+            <element signature="e#410#526#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1003,17 +943,6 @@
         <state vertical-scroll-proportion="0.19408503">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Message/RedirectPurchaseRequestTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3636365">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding>
-            <element signature="e#446#671#0#PHP" expanded="false" />
-            <element signature="e#834#1192#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,9 +983,8 @@
         <state vertical-scroll-proportion="-4.7727275">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#287#850#0#PHP" expanded="false" />
-            <element signature="e#942#1719#0#PHP" expanded="false" />
-            <element signature="e#1725#1829#0#PHP" expanded="false" />
+            <element signature="e#642#763#0#PHP" expanded="false" />
+            <element signature="e#769#1546#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,52 +997,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.931818">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding>
-            <element signature="e#1051#1294#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/GatewayTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5227275">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state vertical-scroll-proportion="-9.113636">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/UserProvisioningRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0384617">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="-2.6923077">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1588795645770" expanded="true" signature="1351:1358" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gateway.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5227275">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state vertical-scroll-proportion="-8.318182">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#69#1151#0#PHP" expanded="false" />
-            <element signature="e#1732#1853#0#PHP" expanded="false" />
+            <marker date="1588795645748" expanded="false" signature="72:246" placeholder=" MTN Cameroon Mobile Money Gateway Driver for Omnipay ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Message/AbstractRequest.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.75">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Message/UserProvisioningRequestTest.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48243994">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-            <element signature="e#577#678#0#PHP" expanded="false" />
-            <element signature="e#1646#1721#0#PHP" expanded="false" />
-            <element signature="e#1727#1812#0#PHP" expanded="false" />
+            <element signature="e#1549#1824#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
