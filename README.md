@@ -9,6 +9,10 @@
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements MTN Mobile money support for Omnipay.
 
+## Note
+
+This release is scurrently unstable but will soon be released on a stable branch when the fix is applied. If you seek to use this package urgently, please contact author @larrytech7
+
 ## Installation
 
 Omnipay is installed via [Composer](http://getcomposer.org/). 
@@ -33,12 +37,16 @@ The following methods are provided by this package:
 use Omnipay\Omnipay;
 
 $gateway = Omnipay::create('Momoc');
-$gateway->setEmail(''); //enter your merchant email obtained from the MTN developer portal
+$config = [
+    'providerCallbackHost' =>'http://mycallback',
+    'amount' => 100.00, //amount the client should pay
+    'api_user' => '', //your provided profile apiuser
+    'api_key' => '', //your provided profile api key
+    'subscription_key' => '', //your provided subscription key
+];
 
-$response = $gateway->purchase(array(
-    '_amount' => 100, //the amount to charge
-    '_tel' => '677400000' //your customer's phone number
-))->send();
+$gateway->authorize($config);
+$response = $gateway->purchase($config)->send();
 
 $transactionInfo = $response->getMessage(); //an array containing transaction data
 

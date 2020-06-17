@@ -23,7 +23,10 @@ class UserProvisioningRequestTest extends TestCase{
 
         $this->options = [
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
-            'amount' => 100.00
+            'amount' => 100.00,
+            'api_user' => '',
+            'api_key' => '',
+            'subscription_key' => '',
         ];
        
         $this->request->initialize($this->options);
@@ -44,6 +47,9 @@ class UserProvisioningRequestTest extends TestCase{
         $expected = [
             'providerCallbackHost' => 'http://localhost/ominipay-momo',
             'amount' => 100.0,
+            'api_user' => '',
+            'api_key' => '',
+            'subscription_key' => '',
             'hash_value' => $hash
         ];
 
